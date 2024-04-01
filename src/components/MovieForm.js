@@ -1,12 +1,12 @@
 import React, { useRef } from "react";
 
-const MovieForm = () => {
+const MovieForm = (props) => {
   const title = useRef(null);
   const text = useRef(null);
   const date = useRef(null);
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log({
+    props.onAddMovie({
       title: title.current.value,
       text: text.current.value,
       date: date.current.value,
